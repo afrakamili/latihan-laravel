@@ -29,11 +29,22 @@ Route::get('/sapa', 'RegisterController@sapa');
 
 Route::post('/sapa', 'RegisterController@sapa_post');*/
 
-Route::get('/', 'HomeController@home');
+/*Route::get('/', 'HomeController@home');
 
 Route::get('/register', 'AuthController@register');
 
 Route::post('/welcome', 'AuthController@welcome');
 
+Route::get('/master', function(){
+    return view('adminlte.master');
+});*/
+
+Route::get('/', function (){
+    return view ('items.index');
+});
+
+Route::get('/data-tables', function(){
+    return view('items.create');
+});
 
 
