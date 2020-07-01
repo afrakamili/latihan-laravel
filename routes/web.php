@@ -11,7 +11,7 @@
 |
 */
 // view -> menampilkan php dari folder views pada file welcome
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
 });
 
@@ -27,4 +27,13 @@ Route::get('/form', 'RegisterController@form');
 
 Route::get('/sapa', 'RegisterController@sapa');
 
-Route::post('/sapa', 'RegisterController@sapa_post');
+Route::post('/sapa', 'RegisterController@sapa_post');*/
+
+Route::get('/', 'HomeController@home');
+
+Route::get('/register', 'AuthController@register');
+
+Route::post('/welcome', 'AuthController@welcome');
+
+
+
