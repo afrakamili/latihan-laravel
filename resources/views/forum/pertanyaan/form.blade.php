@@ -18,6 +18,8 @@
                     <label for="isi">Isi Pertanyaan</label>
                     <input type="text" class="form-control" id="isi" name="isi" placeholder="isi">
                   </div>
+                  <input hidden name="tanggal_dibuat" value = "{{\Carbon\Carbon::now()}}">
+                  <input hidden name="tanggal_diperbaharui" value="{{\Carbon\Carbon::now()}}">
                 </div>
                 <!-- /.card-body -->
 
