@@ -37,7 +37,7 @@ Route::post('/welcome', 'AuthController@welcome');
 
 Route::get('/master', function(){
     return view('adminlte.master');
-});*/
+})
 
 Route::get('/', function (){
     return view ('items.index');
@@ -45,6 +45,17 @@ Route::get('/', function (){
 
 Route::get('/data-tables', function(){
     return view('items.create');
-});
+});*/
+
+//Route::get('/items/create','ItemController@create');
+//Route::post('/items', 'ItemController@store'); //masukin data
+//Route::get('/items','ItemController@index'); //nampilin semua
+
+Route::get('/pertanyaan', 'PertanyaanController@index');
+
+Route::get('/pertanyaan/create', 'PertanyaanController@create');
+Route::post('/pertanyaan', 'PertanyaanController@store');
 
 
+//Route::get('/jawaban/{pertanyaan_id}', 'JawabanController@index');
+//Route::post('/jawaban/{pertanyaan_id}', 'JawabanController@store');
