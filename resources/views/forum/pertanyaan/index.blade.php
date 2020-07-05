@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="ml-3 mt-3">
-  <h1>Data Pertanyaan</h1>
+  <h1>Data Forum Tanya-Jawab</h1>
   <a href="/pertanyaan/create" class="btn btn-primary mb-3">
   Buat pertanyaan baru
   </a>
@@ -15,6 +15,8 @@
           <th>Pertanyaan</th>
           <th>Detail Jawaban</th>
           <th>Form Jawaban</th>
+          <th>Detail QnA</th>
+          <th>Action</th>
           
         </tr>
       </thead>
@@ -37,6 +39,22 @@
               <input hidden name="tanggal_diperbaharui" value="{{\Carbon\Carbon::now()}}">
               <button type="submit" class="btn btn-success">submit jawaban</button>
             </form>
+          </td>
+          <td>
+            <a href="{{url('/pertanyaan/'.$pertanyaan->id) }}">
+              <button class="btn btn-primary">Lihat QnA</button>
+            </a>
+          </td>
+          <td>
+          <a href="{{url('/pertanyaan/'.$pertanyaan->id) . '/edit' }}">
+              <button class="btn btn-default">Edit</button>
+          </a>
+
+          <form action="{{url('/pertanyaan/'. $pertanyaan->id)}}" style="display: inline" method="post">
+          @csrf
+          @method('DELETE')
+          <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+          </form>
           </td>
         </tr>
         @endforeach
